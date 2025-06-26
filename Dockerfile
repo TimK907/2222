@@ -1,8 +1,8 @@
 # Етап 1: Build
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Копіюємо всі необхідні файли до контейнера
+# Копіюємо всі файли проєкту в контейнер
 COPY *.sln .
 COPY ./ ./
 
@@ -13,14 +13,14 @@ RUN dotnet restore
 RUN dotnet publish -c Release -o /out
 
 # Етап 2: Runtime
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
-# Копіюємо білд до другого контейнера
+# Копіюємо білд з першого етапу
 COPY --from=build /out .
 
-# Виставляємо порт для додатку
+# Виставляємо порт, на якому додаток буде працювати
 EXPOSE 5000
 
-# Запускаємо сервер
+# Запуск додатку
 ENTRYPOINT ["dotnet", "CopilotStudioClient.dll"]
