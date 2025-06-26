@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "lib": ["ES2021", "DOM"], // Додано DOM для підтримки браузерних і Node API
+    "lib": ["ES2021", "DOM"],
     "target": "es2019",
     "declaration": true,
     "sourceMap": true,
@@ -17,6 +17,6 @@
     "outDir": "dist",
     "tsBuildInfoFile": "dist/.tsbuildinfo"
   },
-  "include": ["src"], // Включає папку з TypeScript файлами (обов'язкова для коректної компіляції)
-  "exclude": ["node_modules", "dist"] // Виключення директорій, які не повинні потрапляти у вихідний результат
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
