@@ -4,6 +4,7 @@
     "module": "commonjs",
     "lib": ["es2017"],
     "outDir": "dist",
+    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -12,5 +13,8 @@
   },
   "include": [
     "src/**/*.ts"
+  ],
+  "exclude": [
+    "dist"
   ]
 }
