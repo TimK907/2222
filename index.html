@@ -6,54 +6,31 @@
   <style>
     html, body {
       height: 100%;
+      width: 100%;
       margin: 0;
       padding: 0;
       background: #e5ecf2;
       box-sizing: border-box;
     }
     body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+    iframe {
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .outer-chat {
-      padding: 24px 0 24px 0; /* Зовнішній відступ зверху та знизу напр. 24px */
-      background: transparent;
-      max-width: 700px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .chat-iframe {
-      border-radius: 16px;
-      box-shadow: 0 8px 32px 0 rgba(32, 82, 129, 0.15);
-      width: 400px;
-      height: 600px;
-      border: 0;
+      border: none;
+      display: block;
       background: #fff;
-      min-width: 300px;
-      min-height: 460px;
-    }
-    @media (max-width: 600px) {
-      .chat-iframe {
-        width: 98vw;
-        height: 80vh;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="outer-chat">
-    <iframe 
-      class="chat-iframe"
-      src="https://web.powerva.microsoft.com/environments/eedfd89c-7a98-e66c-807e-64b4933461f3/bots/cr7d7_agentMXBot/webchat?__version__=2"
-      allow="microphone; camera"
-      title="Чат Бот"
-    ></iframe>
-  </div>
+  <iframe 
+    src="https://web.powerva.microsoft.com/environments/eedfd89c-7a98-e66c-807e-64b4933461f3/bots/cr7d7_agentMXBot/webchat?__version__=2"
+    allow="microphone; camera"
+    title="Чат Бот"
+  ></iframe>
 </body>
 </html>
